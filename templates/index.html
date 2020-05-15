@@ -1,9 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
-    <input type="text" id="msg"/>
-    <input type="submit"/>
+    <div class="chat-popup" id="myForm">
+      <form action="{{ url_for('index') }}" class="form-container" method="post">
+        <h1>Chat with Blaise</h1>
+
+        <label for="msg"><b>Message</b></label>
+        <textarea placeholder="Type message.." name="msg" required></textarea>
+
+        <input type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+
+    <label>{{ mensaje }}</label>
+
   </body>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
 </html>

@@ -34,12 +34,14 @@ trainer.train(["which programming languages does he know?", "As far as I know, C
 trainer.train(["languages does he speak?", "Speaks Spanish (native), English (fluent), Portuguese (fluent) and is learning German. I'm worried he will reach a point where he mixes it all together."])
 
 
-while True:
-    request = input("Usted... ")
-    response = chatbot.get_response(request.lower())
-    print("Blaise:", response)
-
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 
 def index():
-    
+    if(request.method == "GET"):
+        return render_template("index.html")
+
+    if(request.method == "POST"):
+        data = request.data
+        mensaje = request.form.get('msg')
+        respuesta = chatbot.get_response(mensaje.lower())
+        return render_template("index.html", mensaje = respuesta)
