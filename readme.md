@@ -11,3 +11,9 @@ Next tasks: Add training to the bot, enable the bot to be added to a web platfor
 Blaise is already able to interact through a webpage.
 
 Next tasks: Design chat pop up and show full conversation in the window.
+
+15-may-2020 10:05pm
+
+Blaise already has message and conversation areas.
+
+Next tasks: Design chat pop up window, show full conversation in the window, and integrate with Angular.
