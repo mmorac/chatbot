@@ -6,7 +6,10 @@
   <body>
     <div class="chat-popup" id="myForm">
       <form action="{{ url_for('index') }}" class="form-container" method="post">
-        <h1>Chat with Blaise</h1>
+
+        <h1>Chat with my vitual assistant</h1>
+
+        <textarea placeholder="Type message.." name="chat" required> {{ mensaje }} </textarea>
 
         <label for="msg"><b>Message</b></label>
         <textarea placeholder="Type message.." name="msg" required></textarea>
@@ -15,10 +18,6 @@
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </form>
     </div>
-
-
-    <label>{{ mensaje }}</label>
-
   </body>
   <script>
     function openForm() {
